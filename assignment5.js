@@ -5,9 +5,31 @@ document.addEventListener("DOMContentLoaded", function () {
     let activityLog = document.querySelector(".log");
     let completeButtons = document.querySelectorAll(".completed");
     let discoverNew = document.getElementById("discoverNew");
+    let calendarDate = document.getElementById("calendarDate");
+    let themeButton = document.getElementById("themeButton");
 
     let taskCount = parseInt(taskAssignedCount.innerText); 
     let navCount = parseInt(navTaskCount.innerText); 
+
+    function updateCalendarDate() {
+        let today = new Date();
+        let options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+        calendarDate.innerText = today.toLocaleDateString("en-US", options);
+    }
+    updateCalendarDate();
+
+    function getRandomColor() {
+        let letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    themeButton.addEventListener("click", function () {
+        document.body.style.backgroundColor = getRandomColor();
+    });
 
     completeButtons.forEach(button => {
         button.addEventListener("click", function () {
@@ -49,6 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
  
     discoverNew.addEventListener("click", function () {
-        window.location.href = "newpage.html"; 
+        window.location.href = "blogs.html"; 
     });
 });

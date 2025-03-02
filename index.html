@@ -47,7 +47,7 @@
  .logo_name{
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 2px;
  }
 
  .nav_options{
@@ -217,10 +217,9 @@ gap: 20px;
         <div class="nav_options">
             <div class="do_count">
             <img src="/assets/checkbox.png" alt="checkbox">
-            <input type="checkbox" checked> 
             <span id="navTaskCount">23</span>
             </div>
-          <button class="theme_btn">
+          <button class="theme_btn" id="themeButton">
             <img src="/assets/theme-btn.png" alt="theme button">
           </button> 
         </div>
@@ -250,7 +249,7 @@ gap: 20px;
             <div class="calender-icon">
                 <img src="/assets/calender.png" alt=""> 
             </div>
-            <p>Wed, <strong>Jul 28 2025</strong></p>
+            <p id="calendarDate"></p>
         </div>
     </section>
     <section class="tasks">
