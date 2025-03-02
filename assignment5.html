@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<style>
+    /* font styles */
+    .poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* -------------------------------------- */
+
+  body{
+    margin-right: 140px;
+    margin-left: 140px;
+    background-color: aquamarine;
+  }
+
+  main{
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 20px;
+    
+    
+  }
+
+  .navbar{
+    font-size: 1.5rem;
+    background-color:  #f9f9f9;
+    border: none;
+    border-radius: 16px;
+    display:flex;
+    justify-content: space-between;
+    padding: 15px;
+
+  }
+
+ .logo_name{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+ }
+
+ .nav_options{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+ }
+
+ .theme_btn{
+    border:none;
+    border-radius: 100%;
+    padding: 6px;
+ }
+
+ .do_count{
+    background-color: rgb(214, 214, 217);
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+ }
+
+ .overview {
+    display: flex;
+    justify-content: space-between;
+    background: #f9f9f9;
+    gap: 24px;
+    padding: 15px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom: 2px dashed  #a6aac4;
+    
+}
+
+.task-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(214, 214, 217);
+    border-radius: 12px;
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+.checkbox-icon{
+    background-color: #f9f9f9;
+    border: none;
+    border-radius: 38px;
+    padding: 10px;
+}
+
+.discover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top left , #9BA8F8, #3752FD  );
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+}
+.date{
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgb(214, 214, 217) ;
+border: none;
+border-radius: 12px;
+padding: 10px 20px;
+gap: 20px;
+}
+
+.calender-icon{
+    background-color: #f9f9f9;
+    border: none;
+    border-radius: 38px;
+    padding: 10px;
+}
+.tasks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 15px;
+    background: #f9f9f9;
+    padding: 15px;
+}
+
+.task-card {
+    background: #e0e0e1;
+    padding: 15px;
+    border-radius: 16px;
+    width: auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-card>.company,.task-card>p{
+    background-color: #f9f9f9;
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.task-card-bottom{
+    display: flex;
+    gap:10px;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px dashed  #a6aac4;
+
+}
+
+.deadline{
+    font-weight: lighter;
+}
+
+.completed{
+    font-size: large;
+    color:#f9f9f9;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    background-color: #3752FD;
+}
+
+/* .completed:disabled {
+    background: gray;
+    cursor: not-allowed;
+} */
+
+.clear-history{
+    font-size: large;
+    color:#f9f9f9;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    background-color: #3752FD;
+}
+
+.aside{
+    background-color:  #f9f9f9;
+    text-align: center;
+    height: 100%;
+    border: none;
+    border-radius: 16px;
+    padding: 15px;
+
+}
+.activity-top{
+    display: ;
+    padding-bottom: 15px;
+    border-bottom: 2px dashed  #a6aac4;
+    
+}
+
+.aside>.log>p{
+    background-color:  #e0e0e1;
+    text-align: left;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+</style>
+</head>
+<body class="poppins-regular" >
+    <nav class="navbar">
+        <div class="logo_name">
+            <img src="/assets/logo.png" alt="logo"> Dev<strong>Board</strong> 
+        </div>
+        <div class="nav_options">
+            <div class="do_count">
+            <img src="/assets/checkbox.png" alt="checkbox">
+            <input type="checkbox" checked> 
+            <span id="navTaskCount">23</span>
+            </div>
+          <button class="theme_btn">
+            <img src="/assets/theme-btn.png" alt="theme button">
+          </button> 
+        </div>
+
+    </nav>
+   <main>
+    <div>
+    
+    <section class="overview">
+        <div class="task-info">
+            <div class="checkbox-icon">
+                <img src="/assets/checkbox.png" alt=""> 
+            </div>
+            <div>
+                <p>Task Assigned</p>
+                <span id="taskAssignedCount"><b>06</b></span>
+            </div>
+           
+        </div>
+        <div class="discover" id="discoverNew">
+            <div>
+                <img src="/assets/board.png" alt=""> 
+            </div>
+            <p>Discover Something New Today!</p>
+        </div>
+        <div class="date">
+            <div class="calender-icon">
+                <img src="/assets/calender.png" alt=""> 
+            </div>
+            <p>Wed, <strong>Jul 28 2025</strong></p>
+        </div>
+    </section>
+    <section class="tasks">
+        <div class="task-card">
+            <span class="company">ShopEase</span>
+            <h4>Fix Mobile button issue.</h4>
+            <p>Debug using chrome ,DevTools, check for overlapping...</p>
+            <div class="task-card-bottom">
+                <span class="deadline">Deadline : 21 March 2025</span>
+                <button class="completed" data-title="Fix Mobile Button Issue">Completed</button>
+            </div>
+        </div>
+        <div class="task-card">
+            <span  class="company">SwiftPay</span>
+            <h4>Optimize Home Page.</h4>
+            <p>Debug using chrome ,DevTools, check for overlapping...</p>
+            <div class="task-card-bottom">
+                <span class="deadline">Deadline : 21 March 2025</span>
+                <button class="completed" data-title="Optimize Home Page.">Completed</button>
+            </div>
+        </div>
+        <div class="task-card">
+            <span  class="company">CloudSync</span>
+            <h4>Add Dark Mode.</h4>
+            <p>Store the user preferences in localStorage, updating css vari...</p>
+            <div class="task-card-bottom">
+                <span class="deadline">Deadline : 21 March 2025</span>
+                <button class="completed" data-title="Add Dark Mode.">Completed</button>
+            </div>
+        </div>
+        <div class="task-card">
+            <span  class="company">Meta</span>
+            <h4>Add New Emoji.</h4>
+            <p>Debug using chrome ,DevTools, check for overlapping...</p>
+            <div class="task-card-bottom">
+                <span class="deadline">Deadline : 21 March 2025</span>
+                <button class="completed" data-title="Add New Emoji.">Completed</button>
+            </div>
+        </div>
+        <div class="task-card">
+            <span  class="company">Google LLC</span>
+            <h4>Integrating OpenAI API.</h4>
+            <p>Debug using chrome ,DevTools, check for overlapping...</p>
+            <div class="task-card-bottom">
+                <span class="deadline">Deadline : 21 March 2025</span>
+                <button class="completed" data-title="Integrating OpenAI API.">Completed</button>
+            </div>
+        </div>
+        <div class="task-card">
+            <span  class="company">Glassdoar</span>
+            <h4>Improving Job Searching.</h4>
+            <p>Debug using chrome ,DevTools, check for overlapping...</p>
+            <div class="task-card-bottom">
+                <span class="deadline">Deadline : 21 March 2025</span>
+                <button class="completed" data-title="Improving Job Searching.">Completed</button>
+            </div>
+        </div>
+    </section>
+    </div>
+    <div>
+    <section  class="aside">
+        <div class="activity-top">
+            <img src="/assets/activity.png" alt="">
+            <h3>Activity Log</h3>
+            <button class="clear-history">Clear History</button>
+    
+        </div>
+        <div class="log">
+           
+        </div>
+    
+       </section>
+    </div>
+   </main>
+  <script src="/assignment5.js"></script>
+</body>
+</html>
